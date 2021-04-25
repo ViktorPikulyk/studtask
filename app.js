@@ -315,8 +315,9 @@ app.get('*', (req, res) => {
 
     // The `listen` method launches a web server.
     const port = process.env.PORT || 5000;
-    app.listen(port).then(({ url }) => {
-    console.log(`🚀  Server ready at ${url}`);
+    await new Promise(resolve => app.listen({ port: port }, resolve));
+  console.log(`🚀 Server ready at `);
+  return { server, app };
 });
 }
 
