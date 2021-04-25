@@ -7,6 +7,13 @@ dotenv.config({ path: `./config/.env` });
 const express = require('express');
 const path = require('path');
 
+const app = express();
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build'))); 
+
+
+
 const {DB_URI, DB_NAME, JWT_SECRET } = process.env;
 
 const getToken = (user) => jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: '7 days' });
@@ -281,10 +288,6 @@ const resolvers = {
 };
 
 const start = async () => {
-    const app = express();
-
-    // Serve static files from the React app
-    app.use(express.static(path.join(__dirname, 'client/build'))); 
 
     const client = new MongoClient(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
     await client.connect();
@@ -303,6 +306,10 @@ const start = async () => {
           user,
         }
       }
+    });
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname+'/client/build/index.html'));
     });
 
     // The `listen` method launches a web server.
