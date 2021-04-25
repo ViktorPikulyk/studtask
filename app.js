@@ -297,15 +297,7 @@ const start = async () => {
     // definition and your set of resolvers.
     const server = new ApolloServer({ 
       typeDefs, 
-      resolvers, 
-      context: async ( {req} ) => {
-        const user = await getUserFromToken(req.headers.authorization, db);
-        console.log(user);
-        return {
-          db,
-          user,
-        }
-      }
+      resolvers
     });
 
     app.get('*', (req, res) => {
