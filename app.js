@@ -303,11 +303,7 @@ const start = async () => {
       }
     });
 
-    server.use(express.static('public'));
 
-    server.get('*', (req, res) => {
-    	res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
-    });
 
     // The `listen` method launches a web server.
     const port = process.env.PORT || 5000;
