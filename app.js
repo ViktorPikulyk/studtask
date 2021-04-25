@@ -318,7 +318,6 @@ app.get('*', (req, res) => {
     await new Promise(resolve => app.listen({ port: port }, resolve));
   console.log(`🚀 Server ready at `);
   return { server, app };
-});
 }
 
 start();
