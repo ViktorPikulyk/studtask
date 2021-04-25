@@ -303,7 +303,6 @@ const start = async () => {
         }
       }
     });
-    await server.start();
 
     server.applyMiddleware({ app });
 
