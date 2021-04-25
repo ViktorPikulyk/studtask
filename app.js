@@ -303,6 +303,8 @@ const start = async () => {
           user,
         }
       },
+      introspection: true,
+      playground: true,
     });
 
     // The `listen` method launches a web server.
