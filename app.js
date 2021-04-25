@@ -290,6 +290,7 @@ const start = async () => {
 
     // The ApolloServer constructor requires two parameters: your schema
     // definition and your set of resolvers.
+    const app = express();
     const server = new ApolloServer({ 
       typeDefs, 
       resolvers, 
@@ -302,12 +303,19 @@ const start = async () => {
         }
       }
     });
+    await server.start();
 
+    server.applyMiddleware({ app });
 
+app.use(express.static('public'));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+});
 
     // The `listen` method launches a web server.
     const port = process.env.PORT || 5000;
-    server.listen(port).then(({ url }) => {
+    app.listen(port).then(({ url }) => {
     console.log(`🚀  Server ready at ${url}`);
 });
 }
