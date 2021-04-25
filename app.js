@@ -7,11 +7,6 @@ dotenv.config({ path: `./config/.env` });
 const express = require('express');
 const path = require('path');
 
-const app = express();
-
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'client/build'))); 
-
 
 
 const {DB_URI, DB_NAME, JWT_SECRET } = process.env;
@@ -297,11 +292,21 @@ const start = async () => {
     // definition and your set of resolvers.
     const server = new ApolloServer({ 
       typeDefs, 
-      resolvers
+      resolvers, 
+      context: async ( {req} ) => {
+        const user = await getUserFromToken(req.headers.authorization, db);
+        console.log(user);
+        return {
+          db,
+          user,
+        }
+      }
     });
 
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname+'/client/build/index.html'));
+    server.use(express.static('public'));
+
+    server.get('*', (req, res) => {
+    	res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
     });
 
     // The `listen` method launches a web server.
