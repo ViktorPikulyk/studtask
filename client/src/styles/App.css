@@ -1,0 +1,9 @@
+body {
+	background-image: url(./icons/Endless-Constellation.svg);
+}
+
+@media (max-width: 480px) {
+	body {
+		background-image: none;
+	}
+}

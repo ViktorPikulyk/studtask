@@ -1,0 +1,132 @@
+.modalEditClass {
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    right: 35%;
+    bottom: 40%;
+    background-color: white;
+    border-radius: 0.7vw;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    text-align: center;
+    border:none;
+}
+
+.modalEditClass:focus {
+    outline: 0;
+}
+
+.modalEditClassOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(5px);
+} 
+
+.modalEditClassCloseButton{
+    position: absolute;
+    font-size: 1vw;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 10%;
+    width: 5%;
+    top: 5%;
+    right: 5%;
+    border-radius: 1vw;
+    border: none;
+    cursor: pointer;
+}
+
+.modalEditClassInput1{
+    position: absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    top: 30%;
+    width: 75%;
+    height: 15%;
+    border-radius: 0.5vw;
+    border: none;
+    background-color: rgb(241, 241, 241);
+    color: grey;
+    font-size: 1.5vw;
+    outline: none;
+    padding: 0 2%;
+}
+
+.modalEditClassInput2{
+    position: absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    top: 50%;
+    width: 75%;
+    height: 15%;
+    border-radius: 0.5vw;
+    border: none;
+    background-color: rgb(241, 241, 241);
+    color: grey;
+    font-size: 1.5vw;
+    outline: none;
+    padding: 0 2%;
+}
+
+.modalEditClassSubmit{
+    position: absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    left: 70%;
+    top: 80%;
+    height: 15%;
+    width: 20%;
+    border-radius: 0.5vw;
+    border: none;
+    background-color: rgb(70, 70, 255);
+    font-size: 1.3vw;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    padding: 0;
+}
+
+.modalEditClassSubmit:hover{
+    background-color: rgb(53, 53, 189);
+}
+
+@media (max-width: 480px) {
+    .modalEditClass {
+        top: 35%;
+        left: 5%;
+        right: 5%;
+        bottom: 35%;
+        border-radius: 1em;
+    }
+    .modalEditClassCloseButton{
+        font-size: 0.8em;
+        border-radius: 1em;
+    }
+    .modalEditClassInput1{
+        top: 20%;
+        font-size: 1em;
+        height: 20%;
+        border-radius: 1em;
+    }
+    .modalEditClassInput2{
+        top: 45%;
+        font-size: 1em;
+        height: 20%;
+        border-radius: 1em;
+    }
+    .modalEditClassSubmit{
+        top: 70%;
+        font-size: 1em;
+        height: 20%;
+        border-radius: 1em;
+    }
+}

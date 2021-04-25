@@ -1,0 +1,114 @@
+.modalDeleteSemester {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    right: 40%;
+    bottom: 40%;
+    background-color: white;
+    border-radius: 0.7vw;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    text-align: center;
+    border:none;
+}
+
+.modalDeleteSemester:focus {
+  outline: 0;
+}
+
+  .modalDeleteSemesterOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(4px);
+  }
+
+.ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open{
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+    opacity: 0;
+}
+
+.delete_modal_title{
+  position: absolute;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  top: 15%;
+  font-size: 2vw;
+}
+
+.delete_modal_yes_button{
+  position: absolute;
+  width: 20%;
+  top: 70%;
+  left: 20%;
+  bottom: 10%;
+  right: 60%;
+  font-size: 1vw;
+  color: white;
+  background-color: red;
+  border: none;
+  border-radius: 0.5vw;
+  text-align: center;
+  cursor: pointer;
+}
+
+.delete_modal_yes_button:hover{
+  background-color: rgb(190, 1, 1);
+}
+
+.delete_modal_no_button:hover{
+  background-color: rgb(197, 197, 197);
+}
+
+.delete_modal_no_button{
+  position: absolute;
+  width: 20%;
+  top: 70%;
+  right: 20%;
+  bottom: 10%;
+  left: 60%;
+  font-size: 1vw;
+  border: none;
+  border-radius: 0.5vw;
+  text-align: center;
+  cursor: pointer;
+  background-color: rgb(221, 221, 221);
+}
+
+@media (max-width: 480px) {
+  .modalDeleteSemester {
+    top: 40%;
+    left: 5%;
+    right: 5%;
+    bottom: 40%;
+    border-radius: 1em;
+  }
+
+  .delete_modal_title{
+    top: 5%;
+    font-size: 2em;
+  }
+  
+  .delete_modal_yes_button{
+    top: 65%;
+    font-size: 1em;
+    border-radius: 1em;
+  }
+  
+  .delete_modal_no_button{
+    top: 65%;
+    font-size: 1em;
+    border-radius: 1em;
+  }
+}

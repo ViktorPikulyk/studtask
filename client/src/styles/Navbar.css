@@ -1,0 +1,159 @@
+.navbar_main{
+    padding: 0 3%;
+}
+
+.navbar_top{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.navbar_title{
+    padding: 0;
+    font-size: 22px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 25%;
+    margin-bottom: 5px;
+    margin-top: 30px;
+    color: rgb(77, 77, 77);
+}
+
+.navbar_line{
+    background-color: rgb(109, 109, 109);
+    height: 3px;
+    margin-top: 0;
+    border: none;
+}
+
+.navbar_controls{
+    width: 75%;
+    padding: 0 5%;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    overflow-x:scroll;
+}
+
+#nav_edit_button{
+    display: none;
+}
+
+.nav_edit_button_label{
+    max-width: 26px;
+    min-width: 26px;
+    max-height: 26px;
+    min-height: 26px;
+    line-height: 26px;
+    text-align: center;
+    float: right;
+    font-size: large;
+    font-weight: bolder;
+    cursor: pointer;
+    user-select:none;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 1%;
+    transition: border 300ms ease-in-out;
+}
+
+.nav_edit_button_label > img{
+    filter: grayscale(100%);
+}
+
+.nav_edit_button_label:hover > img{
+    filter: opacity(75%);
+}
+
+#nav_edit_button:checked ~ .nav_edit_button_label{
+    transition: border 300ms ease-in-out;
+    border: 2px solid orange;
+}
+
+#nav_edit_button:checked ~ .nav_edit_button_label > img{
+    filter: opacity(100%);
+}
+
+@media (max-width: 480px) {
+    .navbar_top{
+        flex-direction: column;
+        padding: 0 5%;
+    }
+    .navbar_title{
+        margin-top: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .navbar_controls{
+        width: 100%;
+    }
+    .navbar_line{
+        margin-top: 6px;
+    }
+}
+
+.navbar_color_change{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.colorRadio{
+    display: none;
+}
+
+.colorRadio + label > div{
+    width: 38px;
+    height: 38px;
+    border-radius: 19px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.colorRadio:checked + label  > div{
+    transition: background-color 0.5s;
+    width: 18px;
+    height: 18px;
+    border: 10px solid;
+}
+
+#colorGreen + label  > div{
+    background-color:rgb(62, 212, 87);
+}
+
+#colorGreen:checked + label  > div{
+    background-color:rgb(255, 255, 255);
+    border-color: rgb(62, 212, 87);
+}
+
+#colorYellow + label  > div{
+    background-color:yellow;
+}
+
+#colorYellow:checked + label  > div{
+    background-color:rgb(255, 255, 255);
+    border-color: yellow;
+}
+
+#colorGrey + label  > div{
+    background-color:rgb(216, 216, 216);
+}
+
+#colorGrey:checked + label  > div{
+    background-color:rgb(255, 255, 255);
+    border-color: rgb(216, 216, 216);
+}
+
+#colorWhite + label  > div{
+    width: 30px;
+    height: 30px;
+    border: 4px solid rgb(216, 216, 216);
+    background-color:rgb(255, 255, 255);
+}
+
+#colorWhite:checked + label  > div{
+    border-color: rgb(119, 119, 119);
+}
