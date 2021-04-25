@@ -3,7 +3,14 @@ const {MongoClient , ObjectID} = require('mongodb');
 const dotenv = require('dotenv');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-dotenv.config({ path: `./config/.env` }); 
+dotenv.config({ path: `./config/.env` });
+const express = require('express');
+const path = require('path');
+
+const app = express();
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build'))); 
 
 const {DB_URI, DB_NAME, JWT_SECRET } = process.env;
 
