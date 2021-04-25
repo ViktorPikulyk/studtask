@@ -299,7 +299,8 @@ const start = async () => {
     });
 
     // The `listen` method launches a web server.
-    server.listen().then(({ url }) => {
+    const port = 4000;
+    server.listen(port).then(({ url }) => {
     console.log(`🚀  Server ready at ${url}`);
 });
 }
