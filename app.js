@@ -1,4 +1,5 @@
-const { ApolloServer, gql } = require('apollo-server');
+const { gql } = require('apollo-server');
+const { ApolloServer } = require('apollo-server-express');
 const {MongoClient , ObjectID} = require('mongodb');
 const dotenv = require('dotenv');
 const bcrypt = require('bcryptjs');
