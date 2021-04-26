@@ -327,10 +327,13 @@ async function startApolloServer() {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
+    introspection: true
   });
   await server.start();
 
   server.applyMiddleware({ app });
+
+  app.use(express.static('public'));
 
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
