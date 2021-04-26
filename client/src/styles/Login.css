@@ -11,7 +11,10 @@
     padding: 50px 0px 50px 50px;
     display: flex;
     flex-direction: column;
-    animation: opacityAnim 300ms;
+    -webkit-animation: opacityAnim 300ms; /* Safari 4+ */
+    -moz-animation:    opacityAnim 300ms; /* Fx 5+ */
+    -o-animation:      opacityAnim 300ms; /* Opera 12+ */
+    animation:         opacityAnim 300ms;
 }
 
 .login_header{
@@ -33,13 +36,21 @@
     left: 400px;
 }
 
-@keyframes opacityAnim {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 100%;
-    }
+@-webkit-keyframes NAME-YOUR-ANIMATION {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @-moz-keyframes NAME-YOUR-ANIMATION {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @-o-keyframes NAME-YOUR-ANIMATION {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes NAME-YOUR-ANIMATION {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
   }
 
 .login_inputs{
