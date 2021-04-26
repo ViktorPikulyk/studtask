@@ -96,9 +96,6 @@
     80% {
         opacity: 0;
     }
-    100% {
-      opacity: 100%;
-    }
   }
 
 .taskListItem{

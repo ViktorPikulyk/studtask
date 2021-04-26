@@ -100,7 +100,7 @@
     background: orange;
     cursor: pointer;
     border-radius: 0 0 10px 0;
-    animation: opacityAnim 300ms;
+    animation: opacityAnim 0.3s ease-in;
 }
 
 .class_edit_button > img {
@@ -121,15 +121,12 @@
     cursor: pointer;
     border-radius: 0 0 0 10px;
     font-weight: bold;
-    animation: opacityAnim 300ms;
+    animation: opacityAnim 0.3s ease-in;
 }
 
 @keyframes opacityAnim {
     0% {
       opacity: 0;
-    }
-    100% {
-      opacity: 100%;
     }
   }
 
@@ -269,7 +266,7 @@
 }
 
 .todoItemDeleteButton{
-    animation: opacityAnim 1s;
+    animation: opacityAnim 0.5s ease-in;
     cursor: pointer;
     color: red;
     border: none;
@@ -278,7 +275,7 @@
 }
 
 .newToDoItem{
-    animation: opacityAnim 0.5s;
+    animation: opacityAnim 0.5s ease-in;
     margin-top: 10px;
     display: flex;
     flex-direction: row;

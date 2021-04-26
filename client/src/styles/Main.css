@@ -8,15 +8,12 @@
     overflow: hidden;
     display: flex;
     flex-direction: row; 
-    animation: opacityAnim 300ms;
+    animation: opacityAnim 0.3s ease-in;
 }
 
 @keyframes opacityAnim {
     0% {
       opacity: 0;
-    }
-    100% {
-      opacity: 100%;
     }
   }
 

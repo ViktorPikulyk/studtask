@@ -11,7 +11,7 @@
     padding: 50px 0px 50px 50px;
     display: flex;
     flex-direction: column;
-    animation: loginOpacityAnim 0.9s ease-in;
+    animation: loginOpacityAnim 0.4s ease-in;
 }
 
 .login_header{
