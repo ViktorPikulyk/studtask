@@ -338,8 +338,8 @@ async function startApolloServer() {
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
   });
 
-  await new Promise(resolve => app.listen({ port: 4000 }, resolve));
-  console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`);
+  await new Promise(resolve => app.listen({ port: port }, resolve));
+  console.log(`🚀 Server ready at port ${port}`);
   return { server, app };
 }
 
