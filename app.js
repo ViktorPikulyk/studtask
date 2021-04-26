@@ -338,6 +338,7 @@ async function startApolloServer() {
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
   });
 
+  const port = process.env.PORT || 5000;
   await new Promise(resolve => app.listen({ port: port }, resolve));
   console.log(`🚀 Server ready at port ${port}`);
   return { server, app };
