@@ -332,6 +332,14 @@ async function startApolloServer() {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
+    context: async ( {req} ) => {
+      const user = await getUserFromToken(req.headers.authorization, db);
+      console.log(user);
+      return {
+        db,
+        user,
+      }
+    },
     introspection: true
   });
   await server.start();
