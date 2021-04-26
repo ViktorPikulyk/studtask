@@ -323,6 +323,11 @@ const start = async () => {
 }
 
 async function startApolloServer() {
+
+  const client = new MongoClient(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+  await client.connect();
+  const db = client.db(DB_NAME);
+
   const app = express();
   const server = new ApolloServer({
     typeDefs,
