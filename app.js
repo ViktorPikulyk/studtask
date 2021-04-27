@@ -4,7 +4,7 @@ const {MongoClient , ObjectID} = require('mongodb');
 const dotenv = require('dotenv');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-dotenv.config({ path: `./config/.env` });
+dotenv.config();
 const express = require('express');
 const path = require('path');
 
