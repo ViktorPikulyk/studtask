@@ -1,0 +1,184 @@
+.grades_main{
+    width: 80%;
+    padding: 10% 10%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    overflow: hidden;
+}
+
+.grades_selector{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 30px;
+    color: rgb(75, 75, 75);
+}
+
+.grades_selector > select {
+    margin-left: 20px;
+}
+
+.table_container{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow-x: scroll;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    animation: 0.3s ease-out 0s 1 gradesSlideInFromLeft;
+}
+
+@keyframes gradesSlideInFromLeft {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
+
+.row_control{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+.row_control > button {
+    background-color: rgb(228, 228, 228);
+    color: grey;
+    outline: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 30px;
+    padding: 0;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.row_control > button:hover {
+    color: black;
+    background-color: rgb(196, 196, 196);
+}
+
+.tg{
+    border-collapse:collapse;
+    border-spacing:0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.tg td > input {
+    line-height: 33px;
+    width: 100%;
+    text-align: center;
+    outline: none;
+    border: none;
+    background-color: rgb(233, 233, 233);
+    font-weight: bold;
+}
+
+.tg td{
+    text-align: center;
+    border-color:rgb(255, 255, 255);
+    border-style:solid;
+    border-width:1px;
+    overflow:hidden;
+    word-break:normal;
+    background-color: rgb(233, 233, 233);
+    padding: 0 10px;
+    color: rgb(94, 94, 94);
+    max-width: 70px;
+    min-width: 70px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@media (max-width: 480px) {
+
+    .grades_main{
+        width: 90%;
+        padding: 10% 5%;
+    }
+
+    .tg td{
+        min-width: 60px !important;
+        max-width: 60px !important;
+    }
+
+    .table_container{
+        max-height: 70% !important;
+        align-items: unset;
+        overflow-y: scroll !important;
+    }
+
+    thead {
+        float:left
+    }
+    tbody {
+        float:right
+    }
+    thead td {
+        display: block;
+    }
+
+    tbody td{
+        display: block;
+    }
+
+    .tr_grade{
+        float: left;
+    }
+
+    .tr_priority{
+        float: right;
+    }
+
+    .tr_class:before { 
+        font-size: 20px;
+        content: "Class";
+        display: block;
+        width: 90%;
+        padding: 10px 5%;
+        background-color: rgb(233, 233, 233);
+    }
+    .tr_grade:before { 
+        font-size: 20px;
+        content: "Grade";
+        display: block;
+        width: 90%;
+        padding: 10px 5%;
+        background-color: rgb(233, 233, 233);
+    }
+    .tr_priority:nth-of-type(2):before { 
+        font-size: 20px;
+        content: "Priority";
+        display: block;
+        width: 90%;
+        padding: 10px 5%;
+        background-color: rgb(233, 233, 233);
+    }
+
+    .table_title{
+        display: none;
+    }
+}
