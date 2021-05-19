@@ -39,9 +39,9 @@ const Menu = ({handleTaskListChange}) => {
       <input className="menu_button" type="checkbox" id="button"></input>
       <label htmlFor="button" className="menu_button_label">≡</label>
     <ul className="main_ul">
-      <li className="user_li"><img alt="profilePic" src={profilePic}/>{user &&
+      <li className="user_li" onClick={() => handleTaskListChange(998, "")}><img alt="profilePic" src={profilePic}/>{user &&
           <>{user.getUser.name}</>}</li>
-      <li className="main_li" onClick={() => handleTaskListChange(99, "")}>Semesters</li>
+      <li className="main_li" onClick={() => handleTaskListChange(999, "")}>Semesters</li>
       <ul className="main_li">
         {data &&
           <>{data.myTaskLists.map((taskList, index) => (
@@ -49,7 +49,7 @@ const Menu = ({handleTaskListChange}) => {
           ))
           }</>}
       </ul>
-      <li className="main_li">...</li>
+      <li className="main_li" onClick={() => handleTaskListChange(997, "")}>Grades</li>
       <li className="main_li">...</li>
       <li className="main_li">...</li>
       <li className="logout" onClick={() => {
