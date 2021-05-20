@@ -41,7 +41,7 @@ const Menu = ({handleTaskListChange}) => {
     <ul className="main_ul">
       <li className="user_li" onClick={() => handleTaskListChange(998, "")}><img alt="profilePic" src={profilePic}/>{user &&
           <>{user.getUser.name}</>}</li>
-      <li className="main_li" onClick={() => handleTaskListChange(999, "")}>Semesters</li>
+      <li className="main_li" onClick={() => handleTaskListChange(999, "")}>Семестри</li>
       <ul className="main_li">
         {data &&
           <>{data.myTaskLists.map((taskList, index) => (
@@ -49,13 +49,11 @@ const Menu = ({handleTaskListChange}) => {
           ))
           }</>}
       </ul>
-      <li className="main_li" onClick={() => handleTaskListChange(997, "")}>Grades</li>
-      <li className="main_li">...</li>
-      <li className="main_li">...</li>
+      <li className="main_li" onClick={() => handleTaskListChange(997, "")}>Оцінки</li>
       <li className="logout" onClick={() => {
               localStorage.removeItem(AUTH_TOKEN);
               history.push(`/`);
-            }}>Log Out</li>
+            }}>Вихід</li>
     </ul>
     </div>
   );

@@ -38,7 +38,7 @@ const EditSemester = ({editModalIsOpen, setEditModalIsOpen, editItem, mainRefetc
         <Modal  closeTimeoutMS={300} className="modalEditSemester" overlayClassName="modalEditSemesterOverlay" isOpen={editModalIsOpen} onRequestClose={() => setEditModalIsOpen(false)}>
             <button className="modalEditSemesterCloseButton" onClick={() => setEditModalIsOpen(false)}>X</button>
             <input className="modalEditSemesterInput" type="text" value={updatedTitle} placeholder={editItem && editItem.title} onChange={(e)=> setUpdatedTitle(e.target.value)}></input>
-            <button className="modalEditSemesterSubmit" onClick={edit}>Submit</button>
+            <button className="modalEditSemesterSubmit" onClick={edit}>Ок</button>
         </Modal>
     );
 }

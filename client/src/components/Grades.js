@@ -61,7 +61,7 @@ const Grades = ({data}) => {
                 priorities[index] === '' ? count++ : count += parseFloat(priorities[index]);
             }
         })
-        if(count == 0) count = 1;
+        if(count === 0) count = 1;
         let color = 'red';
         if(res/count >= 50) color = 'rgb(243, 227, 0)';
         if(res/count >= 71) color = 'rgb(160, 218, 2)';
@@ -104,9 +104,9 @@ const Grades = ({data}) => {
     return(
         <div className="grades_main">
             <div className="grades_selector">
-            <label htmlFor="semester_choose">Choose semester:</label>
+            <label htmlFor="semester_choose">Виберіть семестр:</label>
                 <select name="semester_choose" className="semester_choose" onChange={(e) => {handleSemesterChange(e)}} value={semester}>
-                    <option value={0}>None</option>
+                    <option value={0}>Вручну</option>
                     {data && data.myTaskLists.map((semester) => (
                         <option key={semester.id} value={semester.id}>{semester.title}</option>
                     ))}
@@ -116,7 +116,7 @@ const Grades = ({data}) => {
             <table className="tg">
                 <thead>
                 <tr className="tr_class">
-                    <td className="table_title">Class</td>
+                    <td className="table_title">Предмет</td>
                     <>{classes.map((course, index) => (
                         <td key={index} className="tg-0lax"><input title={course} value={course} onChange={(e) => {handleSetClasses(e, index)}}></input></td>
                     ))}</>
@@ -124,13 +124,13 @@ const Grades = ({data}) => {
                 </thead>
                 <tbody>
                 <tr className="tr_grade">
-                    <td className="table_title">Grade</td>
+                    <td className="table_title">Бал</td>
                     <>{grades.map((grade, index) => (
                         <td key={index} className="tg-0lax"><input type="number" min="0" step="1" value={grade} onChange={(e) => {handleSetGrades(e, index)}}></input></td>
                     ))}</>
                 </tr>
                 <tr className="tr_priority">
-                    <td className="table_title">Priority</td>
+                    <td className="table_title">Кредити</td>
                     <>{priorities.map((priority, index) => (
                         <td key={index} className="tg-0lax"><input type="number" min="0" step="1" value={priority} onChange={(e) => {handleSetPriorities(e, index)}}></input></td>
                     ))}</>

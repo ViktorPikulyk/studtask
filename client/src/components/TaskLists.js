@@ -28,7 +28,7 @@ const TaskLists = ({handleTaskListChange, data, mainRefetch}) => {
     return(
         <div className="taskListsMain">
             <div className="taskLists_navbar">
-                <h1 className="tasklists_title">Semesters</h1>
+                <h1 className="tasklists_title">Семестри</h1>
                 <input type="checkbox" id="main_edit_button" onChange={handleCheckboxChange}></input>
                 <label htmlFor="main_edit_button" className="main_edit_button_label"><img alt="/" src={edit_0}/></label>
             </div>

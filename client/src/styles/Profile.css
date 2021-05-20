@@ -46,8 +46,6 @@
     width: 180px;
     height: 180px;
     border-radius: 90px;
-    box-shadow:  20px 20px 60px #c3c3c3,
-             -20px -20px 60px #fdfdfd;
 }
 
 .report_button{

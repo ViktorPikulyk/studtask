@@ -61,7 +61,7 @@ const Login = () => {
 
   const validateUsername = () => {
     if(formState.name.length < 8 || formState.name.length > 24){
-      setUsernameSmall('Min. 8 symbols, max 24 symbols');
+      setUsernameSmall('Мін. 8 символів, макс. 24 символи');
       return false;
     };
     setUsernameSmall('');
@@ -71,7 +71,7 @@ const Login = () => {
   const validateEmail = () => {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!re.test(formState.email)) {
-      setEmailSmall('Wrong email format');
+      setEmailSmall('Вкажіть коректний Email');
       return false;
     }
     setEmailSmall('');
@@ -81,7 +81,7 @@ const Login = () => {
   const validatePassword = () => {
     const re = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})");
     if (!re.test(formState.password)) {
-      setPasswordSmall('The password must contain at least one lowercase character, at least one uppercase character, at least one number, the password must be eight characters or longer');
+      setPasswordSmall('Пароль має містити принаймі одну малу букву, принаймі одну велику букву, принаймі одну цифру та принаймні 8 символів');
       return false;
     }
     setPasswordSmall('');
@@ -112,11 +112,11 @@ const Login = () => {
         <h1 className="login_header_title">StudTask</h1>
       </div>
       <h4 className="login_state">
-        {formState.login ? 'Log in to your account' : 'Create your account'}
+        {formState.login ? 'Будь ласка, авторизуйтесь' : 'Створити обліковий запис'}
       </h4>
       <div className="login_inputs">
         {!formState.login && (
-          <><label htmlFor="username">Username</label>
+          <><label htmlFor="username">Ім'я</label>
           <input
             value={formState.name}
             onChange={(e) =>
@@ -130,7 +130,7 @@ const Login = () => {
           />
           {!formState.login && <small id="usrnameSmall">{usernameSmall}</small>}</>
         )}
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">Електронна пошта</label>
         <input
           value={formState.email}
           onChange={(e) =>
@@ -143,7 +143,7 @@ const Login = () => {
           name="email"
         />
         {!formState.login && <small id="emailSmall">{emailSmall}</small>}
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">Пароль</label>
         <input
           value={formState.password}
           onChange={(e) =>
@@ -157,21 +157,21 @@ const Login = () => {
         />
         {!formState.login && <small id="passwordSmall">{passwordSmall}</small>}
       </div>
-      {formState.login && err && <p className="errorMessage">Please provide a valid email and password.</p>}
+      {formState.login && err && <p className="errorMessage">Будь ласка, вкажіть коректну адресу електронної пошти та пароль</p>}
       <div className="login_buttons">
         <button type="submit" onClick={formState.login ? login : signupProcess}>
-          {formState.login ? 'Login' : 'Sign Up'}
+          {formState.login ? 'Увійти' : 'Створити'}
         </button>
         <p>{formState.login
-          ? 'Don`t have an account?'
-          : 'Have an account?'}</p>
+          ? 'Вперше тут?'
+          : 'Вже є аккаунт?'}</p>
         <h4 onClick={(e) => setFormState({
           ...formState,
           login: !formState.login
         })}>
         {formState.login
-          ? 'Sign Up'
-          : 'Log In'}
+          ? 'Зареєструватися'
+          : 'Вхід'}
         </h4>
       </div>
     </div>

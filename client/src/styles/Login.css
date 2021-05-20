@@ -114,12 +114,13 @@
 @media (max-width: 480px) {
     .login_left{
         width: 480px;
+        padding: 25px;
     }
     .login_right{
         display: none;
     }
     .login_inputs > input {
-        width: 80%;
+        width: 90%;
     }
     .login_buttons > p {
         font-size: 12px;
@@ -127,6 +128,14 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
+        margin-top: 100px;
+    }
+    .login_buttons > h4{
+        margin-top: 0;
+    }
+    .login_buttons{
+        flex-direction: column;
+        text-align: center;
     }
 }
 

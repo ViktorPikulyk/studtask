@@ -50,7 +50,7 @@ const EditClass = ({editModalIsOpen, setEditModalIsOpen, editItem, refetchClasse
             <button className="modalEditClassCloseButton" onClick={() => setEditModalIsOpen(false)}>X</button>
             <input className="modalEditClassInput1" type="text" value={updatedClass.title} placeholder={editItem && editItem.title} onChange={(e)=> setUpdatedClass({...updatedClass, title:e.target.value})}></input>
             <input className="modalEditClassInput2" type="text" value={updatedClass.teacher} placeholder={editItem && editItem.teacher} onChange={(e)=> setUpdatedClass({...updatedClass, teacher:e.target.value})}></input>
-            <button className="modalEditClassSubmit" onClick={edit}>Submit</button>
+            <button className="modalEditClassSubmit" onClick={edit}>Ок</button>
         </Modal>
     );
 }

@@ -74,9 +74,9 @@ const ReportGenerator = ({user, data}) => {
 
     return(
         <div>
-            <PDFDownloadLink style={{color:"white", width:"100%", lineHeight: "30px"}} document={<MyDoc />} fileName="StudTask(Report).pdf">
+            <PDFDownloadLink style={{color:"white", width:"100%", lineHeight: "30px"}} document={<MyDoc />} fileName="StudTask(Звіт).pdf">
                 {({ blob, url, loading, error }) =>
-                loading ? 'Loading...' : 'Create!'
+                loading ? ' ' : 'Створити'
                 }
             </PDFDownloadLink>
         </div>

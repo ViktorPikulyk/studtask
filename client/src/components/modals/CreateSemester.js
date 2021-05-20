@@ -41,15 +41,15 @@ const CreateSemester = ({createModalIsOpen, setCreateModalIsOpen, mainRefetch}) 
     return(
         <Modal  closeTimeoutMS={300} className="modalCreateSemester" overlayClassName="modalCreateSemesterOverlay" isOpen={createModalIsOpen} onRequestClose={() => setCreateModalIsOpen(false)}>
             <button className="modalCreateSemesterCloseButton" onClick={() => setCreateModalIsOpen(false)}>X</button>
-            <h1 className="create_semester_modal_title">New Semester</h1>
+            <h1 className="create_semester_modal_title">Новий семестр</h1>
             <input
                 className="modalCreateSemesterInput"
                 value={newTitle}
                 onChange={handleTitleChange}
                 type="text"
-                placeholder="Input semester title (e.g. 2021(I))"
+                placeholder="Наприклад 4 курс (I)"
             />
-            <button className="modalCreateSemesterSubmit" onClick={create}>Submit</button>
+            <button className="modalCreateSemesterSubmit" onClick={create}>Створити</button>
         </Modal>
     );
 }

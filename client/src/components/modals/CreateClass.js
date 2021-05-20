@@ -42,7 +42,7 @@ const CreateClass = ({createModalIsOpen, setCreateModalIsOpen, taskListID, refet
     return(
         <Modal closeTimeoutMS={300} className="modalCreateClass" overlayClassName="modalCreateClassOverlay" isOpen={createModalIsOpen} onRequestClose={() => setCreateModalIsOpen(false)}>
             <button className="modalCreateClassCloseButton" onClick={() => setCreateModalIsOpen(false)}>X</button>
-            <h1 className="create_class_modal_title">New Class</h1>
+            <h1 className="create_class_modal_title">Новий предмет</h1>
             <input
                 className="modalCreateClassInput1"
                 value={newClass.title}
@@ -51,7 +51,7 @@ const CreateClass = ({createModalIsOpen, setCreateModalIsOpen, taskListID, refet
                     title: e.target.value
                 })}}
                 type="text"
-                placeholder="Title"
+                placeholder="Назва"
             />
             <input
                 className="modalCreateClassInput2"
@@ -61,9 +61,9 @@ const CreateClass = ({createModalIsOpen, setCreateModalIsOpen, taskListID, refet
                     teacher: e.target.value
                 })}}
                 type="text"
-                placeholder="Teacher"
+                placeholder="Викладач"
             />
-            <button className="modalCreateClassSubmit" onClick={create}>Create</button>
+            <button className="modalCreateClassSubmit" onClick={create}>Створити</button>
         </Modal>
     );
 }

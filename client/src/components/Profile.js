@@ -1,5 +1,4 @@
 import '../styles/Profile.css';
-import React, { useEffect, useState } from 'react';
 import profilePic from '../styles/icons/profilePic.png';
 import { useQuery, gql } from '@apollo/client';
 
@@ -46,10 +45,10 @@ const Profile = () => {
     return (
         <div className="profile_main">
             <div className="profile_avatar"><img alt="profilePic" src={profilePic}/></div>
-            <div className="profile_name profile_item">Name: <input readOnly={true} defaultValue={user && user.getUser.name}></input></div>
+            <div className="profile_name profile_item">Ім'я: <input readOnly={true} defaultValue={user && user.getUser.name}></input></div>
             <div className="profile_email profile_item">Email: <input readOnly={true} defaultValue={user && user.getUser.email}></input></div>
-            <div className="profile_password profile_item">New Password: <input readOnly={true}></input></div>
-            <div className="profile_report profile_item">Create report:<button className="report_button"><ReportGenerator user={user} data={data}/></button></div>
+            <div className="profile_password profile_item">Пароль: <input readOnly={true}></input></div>
+            <div className="profile_report profile_item">PDF звіт:<button className="report_button"><ReportGenerator user={user} data={data}/></button></div>
         </div>
     );
 }

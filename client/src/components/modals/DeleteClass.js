@@ -24,9 +24,9 @@ const DeleteClass = ({deleteModalIsOpen, setDeleteModalIsOpen, deleteItemID, ref
 
     return(
         <Modal className="modalDeleteSemester" overlayClassName="modalDeleteSemesterOverlay" isOpen={deleteModalIsOpen} onRequestClose={() => setDeleteModalIsOpen(false)}>
-            <h1 className="delete_modal_title">Are you sure?</h1>
-            <button className="delete_modal_yes_button" onClick={del}>Yes</button>
-            <button className="delete_modal_no_button" onClick={() => setDeleteModalIsOpen(false)}>No</button>
+            <h1 className="delete_modal_title">Ви впевнені?</h1>
+            <button className="delete_modal_yes_button" onClick={del}>Так</button>
+            <button className="delete_modal_no_button" onClick={() => setDeleteModalIsOpen(false)}>Ні</button>
         </Modal>
     );
 }
