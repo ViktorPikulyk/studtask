@@ -68,10 +68,10 @@
     outline: none;
     padding: 0 2%;
 }::-webkit-input-placeholder {
-    opacity: 20%;
+    color: rgb(185, 185, 185);
 }
 ::-moz-placeholder {
-    opacity: 20%;
+    color: rgb(185, 185, 185);
 }
 
 .modalCreateClassInput2{
